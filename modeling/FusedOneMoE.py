@@ -22,6 +22,16 @@ def moe_fwd(
     return y
 
 
+def topk_sigmoid(
+    x: torch.Tensor,
+    topk: int
+) -> torch.Tensor:
+    _, idx = torch.topk(x, topk, dim=-1)
+    mask = torch.zeros_like(x, device=x.device, dtype=torch.bool)
+    mask.scatter_(-1, idx, True)
+    return F.sigmoid(x)*mask
+
+
 def smoe_fwd(
     x: torch.Tensor,
     gate: torch.Tensor,
@@ -29,10 +39,7 @@ def smoe_fwd(
     topk: int
 ) -> torch.Tensor:
     ## fused sparse moe
-    _, idx = torch.topk(gate, topk, dim=-1)
-    mask = torch.zeros_like(gate, device=gate.device)
-    mask.scatter_(-1, idx, True)
-    y = torch.einsum("bse, bsg, geo -> bso", x, F.sigmoid(gate*mask), weight_list)
+    y = torch.einsum("bse, bsg, geo -> bso", x, topk_sigmoid(gate, topk), weight_list)
     return y
 
 
