@@ -25,10 +25,14 @@ def moe_fwd(
 def smoe_fwd(
     x: torch.Tensor,
     gate: torch.Tensor,
-    weight_list: nn.Parameter
+    weight_list: nn.Parameter,
+    topk: int
 ) -> torch.Tensor:
     ## fused sparse moe
-    y = torch.einsum("bse, bsg, geo -> bso", x, F.relu(F.tanh(gate)), weight_list)
+    _, idx = torch.topk(gate, topk, dim=-1)
+    mask = torch.zeros_like(gate, device=gate.device)
+    mask.scatter_(-1, idx, True)
+    y = torch.einsum("bse, bsg, geo -> bso", x, F.sigmoid(gate*mask), weight_list)
     return y
 
 
@@ -39,6 +43,7 @@ class FusedOneMoE(nn.Module):
         intermediate_size: int = 3072,
         groups: int = 12,
         is_sparse: bool = False,
+        topk: int = 1,
         bias: bool = False,
         device: Any | None = None,
         dtype: Any | None = None
@@ -51,6 +56,7 @@ class FusedOneMoE(nn.Module):
         self.intermediate_size = intermediate_size
         self.bias = bias
         self.is_sparse = is_sparse
+        self.topk = topk
         self.WG = nn.Parameter(
             torch.randn(
                 (hidden_size, groups),
@@ -101,7 +107,7 @@ class FusedOneMoE(nn.Module):
         gate = torch.matmul(hidden_states, self.WG)
 
         if self.is_sparse:
-            hidden_states = smoe_fwd(hidden_states, gate, self.Wi)
+            hidden_states = smoe_fwd(hidden_states, gate, self.Wi, self.topk)
         else:
             hidden_states = moe_fwd(hidden_states, gate, self.Wi)
         if self.bias:
