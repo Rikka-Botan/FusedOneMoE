@@ -55,6 +55,35 @@ https://speakerdeck.com/rikkabotan7/sea-model-series-op-dot-1-saint-lupinus-pre-
 
 ### Acceleration rate: 6.08x
 
+***
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 32, activate num: 8
+
+|Module             |Time(RTX 5080)  |
+|:--                |:--                       |
+|usual MoE          |0.892 sec                 |
+|Fused One MoE      |0.058 sec                 |
+
+### Acceleration rate: 15.38x
+
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 128, activate num: 8
+
+|Module             |Time(RTX 5080)  |
+|:--                |:--                       |
+|usual MoE          |2.870 sec                 |
+|Fused One MoE      |0.096 sec                 |
+
+### Acceleration rate: 29.90x
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 1024, activate num: 8
+
+|Module             |Time(RTX 5080)  |
+|:--                |:--                       |
+|usual MoE          |19.678 sec                |
+|Fused One MoE      |0.398 sec                 |
+
+### Acceleration rate: 49.44x
 
 ## How to use
 
