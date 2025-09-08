@@ -53,6 +53,16 @@ Faster Kernel Fused Mixture of Experts by using matmul (matrix multiplication)
 ## How to use
 
 ```python
+"""
+Args:
+   hidden_size: int
+   intermediate_size: int
+   groups: int (experts num)
+   is_sparse: bool (dense or sparse MoE)
+   topk: int
+"""
+
+
 from modeling import FusedOneMoE.FusedOneMoE
 
 model = FusedOneMoE(
