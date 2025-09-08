@@ -25,7 +25,7 @@ https://speakerdeck.com/rikkabotan7/sea-model-series-op-dot-1-saint-lupinus-pre-
 
 ***
 
-# Speed Comparison to usual MoE implements
+# Speed Comparison to usual MoE implements (100 iterations)
 
 ## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 32, activate num: 8
 
