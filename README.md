@@ -1,6 +1,7 @@
 # FusedOneMoE
 
 Faster Kernel Fused Mixture of Experts by using matmul (matrix multiplication)
+
 (Dense MoE fwd: only one line implementation!)
 
 <img width="4400" height="2475" alt="FusedOneMoE" src="https://github.com/user-attachments/assets/eba53256-9ed1-47c6-b82b-f22b85262ae6" />
@@ -60,3 +61,37 @@ model = FusedOneMoE(
 
 y = model(x)
 ```
+
+## Acknowledgements
+
+I thank the developers of python and pytorch.
+
+I thank all the researchers for their efforts to date.
+
+I thank Japan's high standard of education.
+
+And most of all, thank you for your interest in this repository.
+
+## Citations
+
+I would be happy to include a citation at the end, but it is not required.
+
+Feel free to use this model.
+
+
+## Contact Us
+
+[My X account](https://x.com/peony__snow)
+
+
+## About Author
+
+### Rikka Botan
+
+Japanese independent researcher having shy and pampered personality >_<
+
+Twin-tail hair is a charm point :)
+
+Interested in natural language processings. 
+
+Usually using python and C.
