@@ -17,8 +17,6 @@ class MoE(nn.Module):
         inter_dim: int,
         gate_num: int,
         top_k: int = 4,
-        temperature: float = 1.0,
-        noise: float = 0.1,
         bias: bool = False,
         device: Any | None = None,
         dtype: Any | None = None
@@ -27,8 +25,6 @@ class MoE(nn.Module):
         self.inter_dim = inter_dim
         self.gate_num = gate_num
         self.top_k = top_k
-        self.temperature = temperature
-        self.noise = noise
         self.experts = nn.ModuleList([
             nn.Linear(
                 in_features=input_dim,
@@ -100,3 +96,4 @@ class MoE(nn.Module):
         outputs = self.out_linear(F.relu(outputs).square())
 
         return outputs
+
