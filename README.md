@@ -95,3 +95,6 @@ Twin-tail hair is a charm point :)
 Interested in natural language processings. 
 
 Usually using python and C.
+
+<img width="4405" height="2480" alt="RikkaBotan_Logo" src="https://github.com/user-attachments/assets/71ed04a3-dce0-4253-b91e-a0e16e7812f5" />
+
