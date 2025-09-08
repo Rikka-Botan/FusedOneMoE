@@ -1,5 +1,5 @@
-from FusedOneMoE import FusedOneMoE
-from MoE_modeling import MoE
+from modeling.FusedOneMoE import FusedOneMoE
+from benchmark.MoE_modeling import MoE
 import time
 import torch
 
@@ -17,3 +17,4 @@ time3 = time.time()
 
 print('func1: {:.3f} sec'.format(time2 - time1))
 print('func2: {:.3f} sec'.format(time3 - time2))
+
