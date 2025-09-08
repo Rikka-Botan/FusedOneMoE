@@ -68,7 +68,7 @@ Args:
    topk: int
 """
 
-from modeling import FusedOneMoE.FusedOneMoE
+from modeling.FusedOneMoE import FusedOneMoE
 
 model = FusedOneMoE(
    hidden_size = 128, intermediate_size = 512, groups = 32, is_sparse = True, topk = 8
