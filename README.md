@@ -7,13 +7,13 @@ Faster Kernel Fused Mixture of Experts by using matmul (matrix multiplication)
 
 ## Features
 
-1. Efficient operations by using matrix multiplication
+### 1. Efficient operations by using matrix multiplication
    General GPUs are designed to perform matrix multiplication faster than other operations.
 
-2. Static operational graph by avoiding “for” and “if”
+### 2. Static operational graph by avoiding “for” and “if”
    Dynamic operational graph is difficult to optimize kernel operations.
 
-3. Optimizations within the library is available
+### 3. Optimizations within the library is available
    Machine learning libraries, such as PyTorch, are highly optimized within itself.
 
 ***
