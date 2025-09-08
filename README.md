@@ -17,35 +17,35 @@ Faster Mixture of Experts by using matmul (matrix multiplication)
 
 ***
 
-## Speed Comparison to usual MoE implements
+# Speed Comparison to usual MoE implements
 
-### hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 32, activate num: 8
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 32, activate num: 8
 
 |Module             |Time(Intel Ultra 7 265K)  |
 |:--                |:--                       |
 |usual MoE          |2.660 sec                 |
 |Fused One MoE      |0.313 sec                 |
 
-** Accelerataion rate: 8.50x **
+### Accelerataion rate: 8.50x
 
 
-### hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 128, activate num: 8
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 128, activate num: 8
 
 |Module             |Time(Intel Ultra 7 265K)  |
 |:--                |:--                       |
 |usual MoE          |7.468 sec                 |
 |Fused One MoE      |1.142 sec                 |
 
-** Accelerataion rate: 6.54x **
+### Accelerataion rate: 6.54x
 
-### hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 1024, activate num: 8
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 1024, activate num: 8
 
 |Module             |Time(Intel Ultra 7 265K)  |
 |:--                |:--                       |
 |usual MoE          |53.797 sec                |
 |Fused One MoE      |8.853 sec                 |
 
-** Accelerataion rate: 6.08x **
+### Accelerataion rate: 6.08x
 
 
 
