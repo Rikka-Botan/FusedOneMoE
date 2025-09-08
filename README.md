@@ -62,7 +62,6 @@ Args:
    topk: int
 """
 
-
 from modeling import FusedOneMoE.FusedOneMoE
 
 model = FusedOneMoE(
