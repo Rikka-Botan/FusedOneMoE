@@ -1,6 +1,7 @@
 # FusedOneMoE
 
-Faster Mixture of Experts by using matmul (matrix multiplication)
+Faster Kernel Fused Mixture of Experts by using matmul (matrix multiplication)
+(Dense MoE fwd: only one line implementation!)
 
 <img width="4400" height="2475" alt="FusedOneMoE" src="https://github.com/user-attachments/assets/eba53256-9ed1-47c6-b82b-f22b85262ae6" />
 
@@ -48,14 +49,14 @@ Faster Mixture of Experts by using matmul (matrix multiplication)
 ### Accelerataion rate: 6.08x
 
 
-
 ## How to use
 
 ```python
-from modeling import FusedOneMoE
+from modeling import FusedOneMoE.FusedOneMoE
 
 model = FusedOneMoE(
+   hidden_size = 128, intermediate_size = 512, groups = 32, is_sparse = True, topk = 8
 )
 
-
+y = model(x)
 ```
