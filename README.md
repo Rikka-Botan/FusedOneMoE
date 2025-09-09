@@ -6,7 +6,7 @@ Faster Kernel Fused Mixture of Experts by using matmul (matrix multiplication)
 
 ## MoE contents
 
-|Module             |Command                   |source               |
+|Module             |Command                   |Source               |
 |:--                |:--                       |:--                  |
 |Dense MoE          |is_sparse = False         |                     |
 |Sparse Topk MoE    |is_sparse = True, is_indefinacy = False |       |
