@@ -4,6 +4,15 @@ Faster Kernel Fused Mixture of Experts by using matmul (matrix multiplication)
 
 (Dense MoE fwd: only one line implementation!)
 
+## MoE contents
+
+### Dense MoE (is_sparse = False)
+
+### Sparse Topk MoE (is_sparse = True, is_indefinacy = False)
+
+### IMoE (Indefinacy Mixture of Experts) (is_sparse = True, is_indefinacy = True)
+
+
 ### SEA Model series Op.1: Saint Lupinus explanation: 
 
 https://speakerdeck.com/rikkabotan7/sea-model-series-op-dot-1-saint-lupinus-pre-release
