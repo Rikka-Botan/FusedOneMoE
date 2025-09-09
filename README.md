@@ -11,6 +11,7 @@ Faster Kernel Fused Mixture of Experts by using matmul (matrix multiplication)
 ### Sparse Topk MoE (is_sparse = True, is_indefinacy = False)
 
 ### IMoE (Indefinacy Mixture of Experts) (is_sparse = True, is_indefinacy = True)
+https://github.com/Rikka-Botan/IMoE
 
 ***
 
