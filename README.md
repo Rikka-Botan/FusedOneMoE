@@ -173,6 +173,11 @@ Args:
    groups: int (experts num)
    is_sparse: bool (dense or sparse MoE)
    topk: int
+   is_indefinacy: bool
+   topp: float
+   temperature: float
+   noise: float (router noise strength)
+   training: bool
 """
 
 from modeling.FusedOneMoE import FusedOneMoE
