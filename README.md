@@ -12,6 +12,7 @@ Faster Kernel Fused Mixture of Experts by using matmul (matrix multiplication)
 
 ### IMoE (Indefinacy Mixture of Experts) (is_sparse = True, is_indefinacy = True)
 
+***
 
 ### SEA Model series Op.1: Saint Lupinus explanation: 
 
@@ -20,6 +21,8 @@ https://speakerdeck.com/rikkabotan7/sea-model-series-op-dot-1-saint-lupinus-pre-
 
 
 <img width="4400" height="2475" alt="FusedOneMoE" src="https://github.com/user-attachments/assets/eba53256-9ed1-47c6-b82b-f22b85262ae6" />
+
+***
 
 ## Features
 
