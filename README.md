@@ -85,6 +85,71 @@ https://speakerdeck.com/rikkabotan7/sea-model-series-op-dot-1-saint-lupinus-pre-
 
 ### Acceleration rate: 49.44x
 
+***
+
+# Speed Comparison to usual IMoE (Indefinacy Mixture of Experts) implements (100 iterations)
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 32, topp: 0.1
+
+|Module             |Time(Intel Ultra 7 265K)  |
+|:--                |:--                       |
+|usual MoE          |0.618 sec                 |
+|Fused One MoE      |0.271 sec                 |
+
+### Acceleration rate: 2.28x
+
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 128, topp: 0.1
+
+|Module             |Time(Intel Ultra 7 265K)  |
+|:--                |:--                       |
+|usual MoE          |3.430 sec                 |
+|Fused One MoE      |1.032 sec                 |
+
+### Acceleration rate: 3.32x
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 1024, topp: 0.1
+
+|Module             |Time(Intel Ultra 7 265K)  |
+|:--                |:--                       |
+|usual MoE          |34.619 sec                |
+|Fused One MoE      |8.484 sec                 |
+
+### Acceleration rate: 4.08x
+
+***
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 32, topp: 0.1
+
+|Module             |Time(RTX 5080)  |
+|:--                |:--                       |
+|usual MoE          |0.582 sec                 |
+|Fused One MoE      |0.083 sec                 |
+
+### Acceleration rate: 7.01x
+
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 128, topp: 0.1
+
+|Module             |Time(RTX 5080)  |
+|:--                |:--                       |
+|usual MoE          |1.749 sec                 |
+|Fused One MoE      |0.119 sec                 |
+
+### Acceleration rate: 14.70x
+
+## hidden size: 128, intermediate size: 512, sequence lenght: 512, experts num: 1024, topp: 0.1
+
+|Module             |Time(RTX 5080)  |
+|:--                |:--                       |
+|usual MoE          |12.017 sec                |
+|Fused One MoE      |0.410 sec                 |
+
+### Acceleration rate: 29.31x
+
+***
+
+
 ## How to use
 
 ```python
